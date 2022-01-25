@@ -6,7 +6,7 @@ Work Motion Task Demo.
 ##- Steps
 
 - Clone the project to your local machine
-- run docker compose
+- [run docker compose up] in root folder
 - open your browser on (http://localhost:8080/swagger-ui.html)
 
 ##- Tools

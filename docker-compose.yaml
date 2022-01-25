@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  workmotion:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    environment:
+      - SERVER_PORT=8080
+      - MYSQL_URL=jdbc:mysql://mysqlserver/work_motion
+    volumes:
+      - ./project:/app
+    command: ./mvnw spring-boot:run
+
+  mysqlserver:
+    image: mysql:8.0.23
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=work_motion
+    volumes:
+      - ./.mysql_data:/var/lib/mysql
